@@ -1,0 +1,10 @@
+.vscode
+.ipynb_checkpoints
+__pycache__
+
+animelist.csv
+cleaned_animelist.csv
+*.db
+*.MP4
+
+.env

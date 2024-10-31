@@ -1,0 +1,16 @@
+.vscode
+.ipynb_checkpoints
+__pycache__
+**/.env
+
+*.ipynb
+**/*.db
+
+**/assets/*.joblib
+**/assets/*.pkl
+!**/assets/encoder_dicts.joblib
+!**/assets/weights.h5
+
+**/data/*.csv
+!**/data/anime_info.csv
+!**/data/full_anime_info.csv
