@@ -6,17 +6,15 @@ Bookmarks
 
 {% block content %}
 
-
-
 <div class="container-lg">
 
-  <div class="row g-0 mt-3">
-    <h1 class="col p-2 mb-2 anime-heading border-bottom border-custom">
+  <div class="row mt-3">
+    <h1 class="col anime-heading border-bottom border-custom">
       Bookmarks
     </h1>
   </div>
 
-  <!-- Pagination at top and bottom -->
+  <!-- Pagination at top -->
   <div class="text-end mb-2">
     {% if bookmarks.pages == 1 %}
     {% else %}
@@ -42,6 +40,7 @@ Bookmarks
     {% endif %}
   </div>
 
+  <!-- Bookmarks Table -->
   <table class="table table-bordered table-bg border-custom mb-2">
     <thead>
       <tr>
@@ -58,13 +57,13 @@ Bookmarks
           {{ df_row.Index + 1 }}
         </th>
         <td class="img-cell">
-          <a href="{{ url_for('views.anime', anime_id=df_row.MAL_ID) }}" class="">
+          <a href="{{ url_for('views.anime', anime_id=df_row.MAL_ID) }}">
             <img src="{{ df_row.img_url }}" alt="anime image">
           </a>
         </td>
         <td class="anime-cell">
           <div>
-            <a href="{{ url_for('views.anime', anime_id=df_row.MAL_ID) }}" class="">
+            <a href="{{ url_for('views.anime', anime_id=df_row.MAL_ID) }}">
               {{ df_row.Name|e }}
             </a>
           </div>
@@ -92,8 +91,7 @@ Bookmarks
     </tbody>
   </table>
 
-  <!-- Pagination -->
-  <!-- https://betterprogramming.pub/simple-flask-pagination-example-4190b12c2e2e -->
+  <!-- Pagination at bottom -->
   <div class="text-end mb-4">
     {% if bookmarks.pages == 1 %}
     {% else %}
@@ -119,4 +117,6 @@ Bookmarks
     {% endif %}
   </div>
 
-  {% endblock %}
+</div>
+
+{% endblock %}

@@ -6,32 +6,19 @@ Anime
 
 {% block content %}
 
-<!-- Search bar -->
-<!-- <div class='container-md'>
-  <div class="row justify-content-center">
-    <div class="col-lg-6 my-5">
-      <form action="#" class='d-flex'>
-        <input class="form-control me-2" type="search" placeholder="Search Anime" aria-label="Search">
-        <button class="btn btn-custom align-middle" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</div> -->
-
 <!-- Animes -->
 <div class="container-md">
-  <div class="row g-1 my-3">
-    <h1 class="col p-2 anime-heading border-bottom border-custom">
+  <div class="row my-3">
+    <h1 class="col anime-heading border-bottom border-custom">
       Top Animes
     </h1>
   </div>
 
-  <div class="row g-1 row-cols-1 row-cols-lg-2 row-cols-xl-3">
+  <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
     {% for df_row in anime_info_df.itertuples() %}
     <div class="col">
-      <div class="anime card px-0 mb-3 border-custom">
+      <div class="anime card mb-3 border-custom">
         <!-- Anime header row-->
-        <!-- g-0 to remove extra padding at side -->
         <div class="row g-0 anime-header">
           <div class="col-1 anime-rank border-bottom border-custom">
             {{ df_row.Index + 1 }}

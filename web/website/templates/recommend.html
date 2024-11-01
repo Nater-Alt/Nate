@@ -4,7 +4,6 @@
 Recommended for {{ anime_info['Name']|e }}
 {% endblock %}
 
-
 {% block content %}
 
 <!-- Loader -->
@@ -29,7 +28,6 @@ Recommended for {{ anime_info['Name']|e }}
           {% else %}
           <i class="bi bi-bookmark" id="bookmark-icon"></i>
           {% endif %}
-          <!-- <span id="bookmark">Bookmark</span> -->
         </button>
       </form>
     </div>
@@ -39,7 +37,7 @@ Recommended for {{ anime_info['Name']|e }}
 
 <!-- Anime info -->
 <section class="anime-page container-md mt-5">
-  <div class="row g-0 justify-content-evenly">
+  <div class="row justify-content-evenly">
     <div class="col-md-4">
       <div class="d-flex justify-content-center">
         <a href="{{ url_for('views.anime', anime_id=anime_info['MAL_ID']) }}" target="_blank">
@@ -97,19 +95,17 @@ Recommended for {{ anime_info['Name']|e }}
 
 <!-- Recommended Animes -->
 <div class="container-md mt-5">
-  <!-- <h1 class="top-heading fs-1 p-3 w-50 mb-4 border-bottom border-custom"> -->
-  <div class="row g-1 mb-3">
+  <div class="row mb-3">
     <h1 class="anime-heading border-bottom border-custom">
       Recommended Animes
     </h1>
   </div>
 
-  <div class="row g-1 row-cols-1 row-cols-lg-2 row-cols-xl-3">
+  <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
     {% for df_row in rec_df.itertuples() %}
     <div class="col">
-      <div class="anime card px-0 mb-3 border-custom">
+      <div class="anime card mb-3 border-custom">
         <!-- Anime header row-->
-        <!-- g-0 to remove extra padding at side -->
         <div class="row g-0 anime-header">
           <div class="col-1 anime-rank border-bottom border-custom">
             {{ df_row.Index + 1 }}
